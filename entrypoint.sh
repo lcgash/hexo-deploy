@@ -47,7 +47,7 @@ fi
 cp -rf ssh/* /root/.ssh
 chmod 600 /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa.pub
-ll /root/.ssh/
+ls -l /root/.ssh/
 
 
 echo "npm install ..."
