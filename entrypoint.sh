@@ -47,6 +47,7 @@ fi
 cp -rf ssh/* /root/.ssh
 chmod 600 /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa.pub
+ll /root/.ssh/
 
 
 echo "npm install ..."
@@ -60,6 +61,7 @@ echo "Generate file ..."
 ./node_modules/hexo/bin/hexo generate
 
 echo "Deploy file ..."
+echo "${GITHUB_ACTOR}"
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 ./node_modules/hexo/bin/hexo deploy
