@@ -16,10 +16,17 @@ cd "${GITHUB_WORKSPACE}"
 if [ ! -d "/root/.ssh" ];then
   mkdir -p /root/.ssh
 fi
+if [ ! -d "~/.ssh" ];then
+  mkdir -p ~/.ssh
+fi
 cp -rf ssh/* /root/.ssh
 chmod 600 /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa.pub
-ls -l /root/.ssh/
+
+cp -rf ssh/* ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa.pub
+ls -l ~/.ssh/
 
 
 echo "npm install ..."
