@@ -40,6 +40,15 @@ apt-get install -y git && \
 # Directs the action to the the Github workspace.
 cd "${GITHUB_WORKSPACE}"
 
+# mv ssh key
+if [ ! -d "/root/.ssh" ];then
+  mkdir -p /root/.ssh
+fi
+cp -rf ssh/* /root/.ssh
+chmod 600 /root/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa.pub
+
+
 echo "npm install ..."
 npm install
 
